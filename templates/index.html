@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Ticket Price</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href='{{ url_for("static", filename="home.css" ) }}'>
+</head>
+<body>
+    <div class="container">
+        <form class="form-group", action="/predict", method="post">
+            <div id="form">
+                <h1 class="text-white text-center">Estimate Air-Ticket Price</h1>
+
+                <div id="first-group">
+
+                    <div id="content">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        <input type="text" required="required" name="departure" id="input-group" onfocus="(this.type='datetime-local')" placeholder="Departure Date & Time">
+                        
+                    </div>
+
+                    <div id="content">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <select name="source" id="input-group" required="required" style="background-color: black;">
+                            <option value="" disabled selected>Departure location</option>
+                            <option value="Banglore">Banglore</option>
+                            <option value="Kolkata">Kolkata</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Mumbai">Mumbai</option>
+                        </select>
+                    </div>
+                    <div id="content">
+                        <i class="fa fa-plane" aria-hidden="true"></i>
+                        <select id="input-group" required="required" name="airlines" style="background-color: black;">
+                            <option value="" disabled selected>Select Airlines</option>
+                            <option value="IndiGo">IndiGo</option>
+                            <option value="Air India">Air India</option>
+                            <option value="Jet Airways">Jet Airways</option>
+                            <option value="SpiceJet">SpiceJet</option>
+                            <option value="Multiple carriers">Multiple carriers</option>
+                            <option value="GoAir">GoAir</option>
+                            <option value="Vistara">Vistara</option>
+                            <option value="Air Asia">Air Asia</option>
+                            <option value="Vistara Premium economy">Vistara Premium economy</option>
+                            <option value="Jet Airways Business">Jet Airways Business</option>
+                            <option value="Multiple carriers Premium economy">Multiple carriers Premium economy</option>
+                            <option value="Trujet">Trujet</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div id="second-group">
+
+                    <div id="content">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        <input type="text" required="required" name="arrival" id="input-group" onfocus="(this.type='datetime-local')" placeholder="Arrival Date & Time">
+                    </div>
+
+                    <div id="content">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <select id="input-group" required="required" name="destination" style="background-color: black;">
+                            <option value="" disabled selected>Destination Location</option>
+                            <option value="Banglore">Banglore</option>
+                            <option value="Cochin">Cochin</option>
+                            <option value="Kolkata">Kolkata</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                        </select>
+                    </div>
+
+                    <div id="content">
+                        <i class="fa fa-sort-numeric-asc" aria-hidden="true"></i>
+                        <select id="input-group" required="required" name="stopage" style="background-color: black;">
+                            <option value="" disabled selected>Select Stopages count</option>
+                            <!-- 'non-stop', '2 stops', '1 stop', '3 stops', '4 stops' -->
+                            <option value="0">Non-stop</option>
+                            <option value="1">1-stop</option>
+                            <option value="2">2-stop</option>
+                            <option value="3">3-stop</option>
+                            <option value="4">4-stop</option>
+                        </select>
+                    </div>
+            
+                </div>
+
+                <button type="submit" value="Submit" id="submit-btn">Predict Price</button>
+
+                <h3>{{ result_predictive }}</h3>
+            
+            </div>
+
+        </form>
+    </div>
+
+
+    <!-- script  -->
+     <!-- JavaScript -->
+     <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+     crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+     crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+     crossorigin="anonymous"></script> -->
+
+
+</body>
+</html>
