@@ -3,15 +3,11 @@ from flask import Flask, redirect, render_template, url_for, request
 import pandas as pd
 import pickle
 
-
+with open('price_model.pkl', 'rb') as f:
+    model = pickle.load(f)
 
 # flsk app defining :
 app = Flask(__name__)
-
-
-# model initiallizing
-with open('price_model.pkl', 'rb') as f:
-    model = pickle.load(f)
 
 # function for root page
 @app.route('/', methods= ['GET'])  
