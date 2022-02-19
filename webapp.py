@@ -3,8 +3,8 @@ from flask import Flask, redirect, render_template, url_for, request
 import pandas as pd
 import pickle
 
-with open('price_model.pkl', 'rb') as f:
-    model = pickle.load(f)
+    
+model = pickle.load(open('price_model.pkl', 'rb'))
 
 # flsk app defining :
 app = Flask(__name__)
