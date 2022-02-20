@@ -2,15 +2,9 @@
 from flask import Flask, redirect, render_template, url_for, request
 import pandas as pd
 import pickle
-import os 
 
-
-# directory path for webapp
-absalute_path = os.getcwd()
-# model path
-model_uri = os.path.join(absalute_path, 'price_model.pkl')
-with open(model_uri, 'rb') as f:
-    model = pickle.load(f)
+    
+model = pickle.load(open('price_model.pkl', 'rb'))
 
 # flsk app defining :
 app = Flask(__name__)
